@@ -67,14 +67,15 @@
 .contact { position: relative; z-index: 1; padding: var(--block-gap) 0; }
 .contact-frame { position: relative; padding: 0 var(--content-inline); }
 .contact-panel {
-  position: relative; overflow: hidden; border-radius: 20px; aspect-ratio: 1820 / 771; min-height: 420px;
+  position: relative; overflow: hidden; border-radius: 20px;
+  min-height: clamp(420px, 42vw, 771px); padding: clamp(56px, 6vw, 110px) 0;
   display: flex; align-items: center; justify-content: center; color: var(--ink);
 }
-.contact-content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; width: 45.3%; min-width: 280px; text-align: center; }
+.contact-content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; width: min(62%, 900px); min-width: 280px; text-align: center; }
 .contact-heading {
-  margin: 0; font-family: var(--font-display); font-weight: 700; font-size: var(--block-heading);
+  margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.4vw, 64px);
   line-height: 1.1; letter-spacing: -0.025em; color: var(--ink); text-wrap: balance; text-transform: uppercase;
-  text-shadow: 0 2px 24px rgba(52, 69, 42, 0.2);
+  text-shadow: 0 2px 24px rgba(52, 69, 42, 0.2); overflow-wrap: break-word;
 }
 .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: var(--heading-gap); }
 .contact-pill { gap: 8px; }
@@ -89,7 +90,7 @@
 @media (max-width: 1199px) { .contact { padding-bottom: var(--block-gap-bottom); } }
 @media (max-width: 959px) {
   .contact-frame { padding: 0 var(--content-gutter); }
-  .contact-panel { aspect-ratio: auto; height: calc(100svh - 40px); min-height: 520px; align-items: flex-start; padding-top: 10svh; }
+  .contact-panel { min-height: calc(100svh - 40px); align-items: flex-start; padding: 10svh 0 40svh; }
   .contact-content { width: 87.6%; }
   .contact-actions { flex-direction: column; align-items: center; gap: 10px; }
   .contact-cans { overflow: hidden; top: 0; height: 100%; }
