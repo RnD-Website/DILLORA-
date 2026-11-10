@@ -1,0 +1,113 @@
+/* =========================================================
+   Screen 2 — white rising panel, arc gallery, full-bleed stack
+   ========================================================= */
+.screen2 {
+  position: relative; z-index: 2;
+  margin-top: -100vh; margin-top: -100dvh;
+  --rise-x: 0%; --rise-y: 0vh;
+  border-top-left-radius: var(--rise-x) var(--rise-y);
+  border-top-right-radius: var(--rise-x) var(--rise-y);
+  overflow: hidden;
+  --iso-card-inset: 50px;
+  color: var(--ink-on-light);
+  background: #fff;
+}
+.screen2-bg-fixed {
+  position: absolute; inset: 0; z-index: 0; background: #fff;
+}
+.screen2-bg-fixed::after {
+  content: ''; position: absolute; inset: 0; opacity: 0.06;
+  background: var(--asset-bg-texture) center / cover no-repeat; mix-blend-mode: multiply;
+}
+.screen2-pin { position: relative; z-index: 1; height: 100vh; height: 100dvh; overflow: hidden; }
+.screen2-arc-target {
+  position: absolute; top: var(--iso-card-inset); bottom: var(--iso-card-inset);
+  left: var(--content-inline); right: var(--content-inline);
+  visibility: hidden; pointer-events: none;
+}
+.screen2-arc-inner {
+  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: space-between; height: 100%;
+  padding: clamp(36px, 6vh, 76px) 0 clamp(28px, 5vh, 56px);
+}
+.screen2-headline { width: 100%; padding: 0 var(--content-inline); }
+.screen2-h2 {
+  max-width: clamp(320px, 62vw, calc(1190px * var(--ui-scale))); margin: 0 auto; text-align: center;
+  font-family: var(--font-display); font-weight: 700; font-size: var(--block-heading);
+  line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; text-transform: uppercase;
+}
+.screen2-h2-ink { color: var(--ink-on-light); }
+.screen2-h2-accent { color: var(--accent-on-light); }
+.screen2-arc-stage { position: relative; flex: 1; width: 100%; min-height: 0; }
+.screen2-arc-card {
+  position: absolute; left: 50%; top: 42%;
+  width: clamp(240px, 19.9vw, calc(382px * var(--ui-scale)));
+  aspect-ratio: 382 / 273; border-radius: 20px; overflow: hidden;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden; will-change: transform, opacity;
+  box-shadow: 0 18px 40px rgba(32, 37, 28, 0.12);
+  background: #e9ecdc;
+}
+.scenario-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.screen2-subline {
+  max-width: clamp(320px, 30.5vw, calc(585px * var(--ui-scale))); margin: 0 auto; padding: 0 24px;
+  text-align: center; font-family: var(--font-ui); font-weight: 500;
+  font-size: clamp(16px, 1.04vw, calc(20px * var(--ui-scale))); line-height: 1.4; color: var(--ink-on-light);
+}
+
+.scenario-zoom {
+  position: absolute; z-index: 5; border-radius: 20px; overflow: hidden; visibility: hidden;
+  background: #e9ecdc; --copy: 0;
+}
+.scenario-zoom .scenario-card-copy { opacity: var(--copy); }
+.scenario-zoom .scenario-card-shade { opacity: var(--copy); }
+
+.scenario-stack { position: absolute; inset: 0; z-index: 6; pointer-events: none; visibility: hidden; }
+.scenario-card-iso .scenario-card-img { will-change: transform; transform-origin: 50% 60%; }
+.scenario-deck-meta {
+  position: absolute; z-index: 50; right: calc(var(--content-inline) + 30px); top: calc(var(--iso-card-inset) + 26px);
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-ui); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; color: #fff;
+  font-variant-numeric: tabular-nums; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+.scenario-deck-bar { position: relative; width: 120px; height: 2px; background: rgba(255, 255, 255, 0.35); border-radius: 2px; overflow: hidden; }
+.scenario-deck-bar > span { position: absolute; inset: 0; background: #fff; transform-origin: 0 50%; transform: scaleX(0.125); transition: transform 0.3s ease; }
+@media (max-width: 639px) {
+  .scenario-deck-meta { right: calc(var(--content-gutter) + 18px); top: calc(var(--iso-card-inset) + 16px); }
+  .scenario-deck-bar { width: 64px; }
+}
+.scenario-card-iso {
+  position: absolute; top: var(--iso-card-inset); bottom: var(--iso-card-inset);
+  left: var(--content-inline); right: var(--content-inline);
+  border-radius: 20px; overflow: hidden;
+  transform-origin: 50% 0%; will-change: transform;
+  box-shadow: 0 -10px 40px rgba(20, 28, 12, 0.18);
+  background: #e9ecdc;
+}
+.scenario-card-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 56%, rgba(0, 0, 0, 0.9)); }
+.scenario-card-dim { position: absolute; inset: 0; background: #000; opacity: 0; }
+.scenario-card-copy {
+  position: absolute; left: calc(30px * var(--ui-scale)); right: calc(30px * var(--ui-scale));
+  bottom: calc(clamp(24px, 4vh, 56px) + 28px); max-width: calc(640px * var(--ui-scale));
+}
+.scenario-card-title {
+  margin: 0 0 10px; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(26px, 3.4vw, calc(40px * var(--ui-scale))); line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--ink); text-transform: uppercase;
+}
+.scenario-card-caption {
+  margin: 0; font-family: var(--font-ui); font-weight: 500; font-size: var(--text-body); line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 1199px) {
+  .screen2 { margin-top: 0; isolation: isolate; border-radius: 0; }
+  .screen2-arc-card { width: calc(clamp(240px, 19.9vw, 382px) / 1.1); }
+}
+@media (max-width: 639px) {
+  .screen2 { --iso-card-inset: 40px; }
+  .screen2-arc-card { width: calc(clamp(240px, 19.9vw, 382px) / 1.21); }
+  .scenario-card-iso { left: var(--content-gutter); right: var(--content-gutter); border-radius: 16px; }
+  .scenario-card-copy { left: 20px; right: 20px; bottom: 20px; }
+  .screen2-subline, .scenario-card-caption { font-size: 14px; }
+}

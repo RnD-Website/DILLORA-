@@ -1,0 +1,118 @@
+/* =========================================================
+   Advantages (arc cards) + FAQ on one gradient backdrop
+   ========================================================= */
+.advantages {
+  position: relative; z-index: 3; color: var(--ink);
+  border-top-left-radius: var(--rise-radius, 0px); border-top-right-radius: var(--rise-radius, 0px);
+  overflow: clip; isolation: isolate;
+  padding-top: var(--block-gap);
+  background: #8f9c55;
+}
+.advantages-bg {
+  position: sticky; top: 0; height: 100vh; height: 100lvh; margin-bottom: -100vh; margin-bottom: -100lvh;
+  z-index: 0; pointer-events: none; overflow: hidden;
+}
+.advantages-bg .hero-gradient-wrap .gradient-field {
+  background-color: #a5ad62;
+  background-image:
+    radial-gradient(60% 55% at 8% 18%, #eef0cf, rgba(238, 240, 207, 0) 70%),
+    radial-gradient(55% 50% at 88% 22%, #7f8f45, rgba(127, 143, 69, 0) 72%),
+    radial-gradient(65% 55% at 92% 92%, #d9b448, rgba(217, 180, 72, 0) 70%),
+    radial-gradient(60% 55% at 10% 88%, #e9dfa6, rgba(233, 223, 166, 0) 70%),
+    radial-gradient(70% 60% at 50% 55%, #b7c374, rgba(183, 195, 116, 0) 75%);
+}
+.advantages-pin { position: relative; z-index: 1; height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: visible; }
+.advantages-title-row { position: relative; z-index: 1; flex: none; padding: clamp(36px, 6vh, 76px) var(--content-inline) 0; }
+.advantages-title {
+  max-width: clamp(320px, 62vw, calc(1190px * var(--ui-scale))); margin: 0 auto; text-align: center;
+  font-family: var(--font-display); font-weight: 700; font-size: var(--block-heading);
+  line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; color: var(--ink); text-transform: uppercase;
+  text-shadow: 0 2px 24px rgba(52, 69, 42, 0.18);
+}
+.advantages-content {
+  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center;
+  width: 100%; max-width: 640px; margin: var(--heading-gap) auto 0;
+  padding: 0 var(--content-inline); text-align: center; flex: none;
+}
+.advantages-arc-cards {
+  position: relative; display: block; overflow: visible; width: 100%;
+  height: clamp(220px, 34vw, calc(420px * var(--ui-scale)));
+}
+.advantage-card {
+  position: absolute; left: 50%; top: 50%;
+  display: flex; flex-direction: column; align-items: flex-start;
+  width: clamp(220px, 77.7vw, calc(420px * var(--ui-scale))); max-width: 26vw;
+  aspect-ratio: 352 / 385; margin: 0;
+  padding: clamp(19px, 1.92vw, calc(28px * var(--ui-scale)));
+  border-radius: 20px; background: #fff; text-align: left; opacity: 0;
+  will-change: transform, opacity;
+  box-shadow: 0 20px 50px rgba(52, 69, 42, 0.12);
+}
+.advantage-card-number {
+  margin: 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(48px, 21.5vw, calc(90px * var(--ui-scale))); line-height: 1.1; letter-spacing: -1.8px;
+  color: var(--card-color, var(--ink-on-light));
+}
+.advantage-card-title {
+  margin: 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(26px, 8vw, calc(40px * var(--ui-scale))); line-height: 1.1; letter-spacing: -0.8px;
+  color: var(--card-color, var(--ink-on-light)); text-transform: uppercase;
+}
+.advantage-card-description {
+  margin: auto 0 0; font-family: var(--font-ui); font-weight: 500; font-size: 14px; line-height: 1.3;
+  color: var(--ink-on-light);
+}
+@media (min-width: 1200px) { .advantage-card-description { font-size: var(--text-body); } }
+
+/* FAQ */
+.faq { position: relative; z-index: 1; padding: var(--block-gap) 0 var(--block-gap); color: var(--ink); }
+.faq-heading-grid { display: block; padding: 0 var(--content-inline) var(--heading-gap); }
+.faq-heading {
+  max-width: clamp(320px, 62vw, calc(1190px * var(--ui-scale))); margin: 0 auto; text-align: center;
+  font-family: var(--font-display); font-weight: 700; font-size: var(--block-heading);
+  line-height: 1.1; letter-spacing: -0.025em; text-wrap: balance; color: var(--ink); text-transform: uppercase;
+}
+.faq-container { position: relative; z-index: 1; }
+.faq-list { display: grid; grid-template-columns: repeat(2, 1fr); align-items: start; gap: calc(15px * var(--ui-scale)); width: 100%; }
+.faq-col { display: flex; flex-direction: column; gap: calc(15px * var(--ui-scale)); }
+.faq-item { background: #fff; border-radius: 20px; overflow: hidden; }
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%;
+  padding: clamp(20px, 3vw, calc(25px * var(--ui-scale))); text-align: left; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-question-text {
+  font-family: var(--font-ui); font-weight: 500; font-size: calc(20px * var(--ui-scale));
+  line-height: 1.25; letter-spacing: -0.01em; color: var(--ink-on-light);
+}
+.faq-toggle { position: relative; flex-shrink: 0; width: 25px; height: 25px; }
+.faq-toggle-line { position: absolute; background: var(--ink-on-light); transition: transform 0.25s ease; }
+.faq-toggle-line-h { top: 50%; left: 0; width: 25px; height: 2px; margin-top: -1px; }
+.faq-toggle-line-v { top: 0; left: 50%; width: 2px; height: 25px; margin-left: -1px; }
+.faq-item.is-open .faq-toggle-line-v { transform: scaleY(0); }
+.faq-answer-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.faq-item.is-open .faq-answer-wrap { grid-template-rows: 1fr; }
+.faq-answer-inner { overflow: hidden; min-height: 0; }
+.faq-answer {
+  margin: 0; padding: 0 clamp(20px, 3vw, calc(25px * var(--ui-scale))) clamp(20px, 3vw, calc(25px * var(--ui-scale)));
+  max-width: 62ch; font-family: var(--font-ui); font-weight: 500; font-size: var(--text-body); line-height: 1.55;
+  color: var(--ink-on-light-soft); opacity: 0; transition: opacity 0.2s ease;
+}
+.faq-item.is-open .faq-answer { opacity: 1; transition: opacity 0.3s ease 0.1s; }
+
+@media (max-width: 1199px) {
+  .advantages { border-radius: 0; }
+  .advantages-arc-cards { height: clamp(345px, calc(96.2vw - 30px), 490px); }
+  .advantage-card { padding: clamp(19px, 6.41vw, 28px); max-width: none; width: min(77.7vw, 420px); }
+  .faq { padding-bottom: var(--block-gap-bottom); }
+  .faq-heading-grid { padding: 0 var(--content-gutter) var(--heading-gap); }
+  .faq-question-text { font-size: 18px; }
+  .faq-answer { font-size: var(--text-body-sm); }
+}
+@media (min-width: 640px) and (max-width: 1199px) {
+  .advantages-arc-cards { height: 520px; }
+  .advantage-card { width: min(46vw, 420px); }
+}
+@media (max-width: 959px) {
+  .faq-list { grid-template-columns: 1fr; }
+}

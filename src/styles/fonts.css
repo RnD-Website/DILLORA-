@@ -1,0 +1,11 @@
+/*
+ * Licensed originals (optional).
+ * The reference uses "Soledago" (display) and "Bounded" Medium (UI/body).
+ * If you hold licenses, drop the files into /public/fonts and uncomment:
+ *
+ * @font-face { font-family: 'Soledago'; src: url('/fonts/Soledago.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+ * @font-face { font-family: 'Bounded'; src: url('/fonts/Bounded-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+ *
+ * They take priority automatically via --font-display / --font-ui in base.css.
+ * Until then the bundled open-source matches render: Kalnia 700 + Unbounded 500.
+ */
