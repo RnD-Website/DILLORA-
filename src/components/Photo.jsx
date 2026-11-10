@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { jarImage } from '../data/images.js';
 
 /**
- * Real-photo <img>: serves the local copy from /public/images
- * (`npm run fetch:images`), falls back to the licensed CDN original, and as a
- * last resort shows the real DILLORA jar photo on a brand background.
+ * Photo <img> with a responsive srcset; if a file is ever missing it falls
+ * back to the DILLORA jar on a brand background instead of a broken image.
  */
 export default function Photo({ image, alt, className = '', width = 1800, eager = false, sizes, ...rest }) {
   const [src, setSrc] = useState(image.local);

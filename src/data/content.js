@@ -53,7 +53,7 @@ export const SCENARIOS = [
     title: 'Snack board o’clock',
     caption: 'When the cheese is out and the board needs something sharp',
     image: STOCK.board,
-    alt: 'A jar of pickles with chili, dill, garlic and spices on a white wooden table',
+    alt: 'A DILLORA jar of sliced cucumber pickles with fresh cucumbers, dill, garlic and mustard seeds',
   },
   {
     id: 'burger',
@@ -74,35 +74,28 @@ export const SCENARIOS = [
     title: 'Midnight fridge raid',
     caption: 'When it’s late, the kitchen’s quiet and the jar is calling',
     image: STOCK.fridge,
-    alt: 'A hand pulling a pickle from an open jar',
+    alt: 'An open DILLORA clip jar of pickles beside a plate of pickle slices and a fork',
   },
   {
     id: 'tacos',
     title: 'Taco Tuesday',
     caption: 'When the salsa needs crunch and a little extra heat',
     image: STOCK.tacos,
-    alt: 'Pickles with chili and garlic in a glass jar',
+    alt: 'A clip jar of whole pickles with chili, garlic and bay leaf',
   },
   {
     id: 'brunch',
     title: 'Slow Sunday brunch',
     caption: 'When the bagels are toasted and nobody’s in a hurry',
     image: STOCK.brunch,
-    alt: 'Friends passing a DILLORA jar of cucumber dill pickles across a rustic dinner table',
+    alt: 'Friends passing a DILLORA jar of cucumber dill pickles on a board across a dinner table',
   },
   {
     id: 'sandwich',
     title: 'Sandwich stacker',
     caption: 'When the deli order needs one last crunchy layer',
     image: STOCK.jarBoard,
-    alt: 'Pickles with garlic and dill in a glass jar on a cutting board',
-  },
-  {
-    id: 'salad',
-    title: 'Fresh salad bowl',
-    caption: 'When the greens need something sharp to wake them up',
-    image: STOCK.slices,
-    alt: 'Fresh cucumber slices with dill on a plate',
+    alt: 'A DILLORA clip jar of sliced pickles with garlic, dill and chili on a cutting board',
   },
 ];
 
@@ -139,10 +132,10 @@ export const ABOUT = {
   aside:
     'We’re about crisp cucumbers, real dill and a brine that’s balanced, not brutal. No shortcuts, no gimmicks — just a jar you’ll actually want to finish.',
   cards: [
-    { image: STOCK.jarBoard, alt: 'Pickles with garlic and dill in a glass jar on a cutting board' },
-    { image: STOCK.slices, alt: 'Fresh cucumber slices with dill on a plate' },
-    { image: STOCK.ingredients, alt: 'Cucumbers, garlic, dill and chili ready for pickling' },
-    { image: STOCK.jarHand, alt: 'A hand holding a jar of pickles' },
+    { image: STOCK.jarBoard, alt: 'A DILLORA clip jar of sliced pickles with garlic, dill and chili on a cutting board' },
+    { image: STOCK.board, alt: 'A DILLORA jar of sliced cucumber pickles with fresh cucumbers and dill' },
+    { image: STOCK.tacos, alt: 'A clip jar of whole pickles with chili, garlic and bay leaf' },
+    { image: STOCK.fridge, alt: 'A DILLORA jar beside a plate of pickle slices' },
   ],
 };
 

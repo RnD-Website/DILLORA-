@@ -72,9 +72,6 @@ export default function Footer({ reveal = true }) {
           <p className="site-footer-address site-footer-address-mobile">{BRAND.address}</p>
           <span>© {new Date().getFullYear()} DILLORA. All rights reserved.</span>
           <Link to="/privacy" className="site-footer-credit">Privacy Policy</Link>
-          <a className="site-footer-credit" href="https://www.freepik.com" target="_blank" rel="noopener noreferrer">
-            Lifestyle photos: Freepik
-          </a>
         </div>
       </div>
     </footer>

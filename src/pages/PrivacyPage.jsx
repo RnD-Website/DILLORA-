@@ -20,10 +20,6 @@ const SECTIONS = [
   },
   { q: 'How we use it', a: ['To understand which pages work, fix problems and improve the site. No ads, and we never sell your data.'] },
   { q: 'Your choices', a: [`You can clear your browser storage at any time to reset your cookie choice, or email ${BRAND.email} to ask about any data we hold.`] },
-  {
-    q: 'Image credits',
-    a: ['Lifestyle and ingredient photography by Freepik (freepik.com), used under the Freepik free license.'],
-  },
 ];
 
 export default function PrivacyPage() {

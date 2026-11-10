@@ -7,12 +7,11 @@ A section-by-section recreation of the yaas-energy.com experience, rebranded as 
 ## Run it
 ```bash
 npm install
-npm run fetch:images   # downloads the licensed (unwatermarked) stock photos into /public/images/licensed
 npm run dev            # http://localhost:5173
 npm run build          # production build in /dist
 npm run preview
 ```
-If you skip `fetch:images`, the site still works: those photo slots show the DILLORA jar. Watermarked preview images are never used.
+All photos are DILLORA brand shots stored in `public/images/scenes/` — nothing to download.
 
 ## Where to change things
 | What | File |
